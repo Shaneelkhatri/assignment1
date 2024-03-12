@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Status</title>
+</head>
+<body>
+	<h1>Search Status</h1>
+	<form action="searchstatusprocess.php" method="get">
+		<label for="Search">Search:</label>
+		<input type="text" id="Search" name="Search" required>
+		<span class="validity"></span>
+		<br><br>
+		<input type="submit" value="Show Results">
+	</form>
+	<p><a href="index.html">Return to Home</a></p>
+	<p><a href="searchstatusform.html">Return to Search Status</a></p>
+	<script>
+		const input = document.getElementById('Search');
+		input.addEventListener('invalid', () => {
+			input.setCustomValidity('The search string is empty. Please enter a keyword to search.');
+		});
+		input.addEventListener('input', () => {
+			input.setCustomValidity('');
+		});
+	</script>
+</body>
+</html>
