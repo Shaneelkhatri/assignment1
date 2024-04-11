@@ -10,8 +10,14 @@
     <form>
         <label for="stcode">Status Code:</label><br>
         <input type="text" name="stcode" id="stcode" required
-        pattern="[S][0-9]{4}" maxlength="5" value=""><br>
+        required pattern="[S][0-9]{4}" maxlength="5" value=""><br>
         <!-- Add other required form elements here -->
+        <br>
+        <label for="status">Status:<label><br>
+        <input type="text" name = "st"
+        required pattern ="[a-zA-Z0-9,!?. ]*[a-zA-Z0-9!?.]+[a-zA-Z0-9,!?. ]* "value="<?php echo isset($_POST['st']) ? htmlspecialchars($_POST['st']) : ''; ?>"><br>
+        
+
         <input type="submit" value="Submit">
     </form>
 </body>
